@@ -130,7 +130,7 @@ export default function AuthScreen({ onSuccess }) {
           textAlign: "center",
         }}
       >
-        <h1 style={{ marginBottom: "32px" }}>Чат для четверых</h1>
+        <h1 style={{ marginBottom: "32px" }}>messenger</h1>
 
         <button
           onClick={handleAnonymousLogin}

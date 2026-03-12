@@ -2,3 +2,31 @@
   font-family: sans-serif;
   text-align: center;
 }
+/* Полное отключение pinch-zoom и double-tap zoom на мобильных */
+html, body, #root {
+  touch-action: pan-x pan-y;                /* только скролл, без pinch */
+  -webkit-text-size-adjust: 100%;           /* iOS не увеличивает текст автоматически */
+  overscroll-behavior: none;                /* убирает "резиновый" эффект */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Отключаем зум на интерактивных элементах (input, кнопки и т.д.) */
+input, textarea {
+  font-size: 17px !important;   /* форсируем 17px везде */
+  -webkit-text-size-adjust: 100% !important;
+  touch-action: manipulation;
+}
+
+/* Дополнительно для iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-touch-callout: none;            /* отключает контекстное меню при долгом тапе */
+  }
+}
+
+/* Если у тебя контейнер сообщений имеет свой класс — добавь */
+.messages-container {                       /* замени на реальный класс твоего div с сообщениями */
+  touch-action: pan-y;                      /* только вертикальный скролл */
+}
